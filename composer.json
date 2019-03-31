@@ -1,0 +1,27 @@
+{
+    "name": "nhatphamcdn/assets-manage",
+    "description": "Laravel manage assets",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "nhatphamcdn",
+            "email": "nhatphamcdn@gmail.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {},
+    "autoload": {
+      "psr-4": {
+        "Nhatphamcdn\\AssetsManage\\": "src/"
+      }
+    },
+    "autoload-dev": {
+      "psr-4": {
+        "Nhatphamcdn\\AssetsManage\\Tests\\": "tests"
+      }
+    },
+    "require-dev": {
+        "orchestra/testbench": "^3.8"
+    }
+}
