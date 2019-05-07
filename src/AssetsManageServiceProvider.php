@@ -42,7 +42,7 @@ class AssetsManageServiceProvider extends ServiceProvider
         $configPath = __DIR__.'/../config/assets.php';
         
         $this->publishes([
-            $configPath => config_path('assets.php')
+            $configPath => config_path('assets-manage.php')
         ], 'config');
 
         $this->mergeConfigFrom($configPath, 'assets-manage');
