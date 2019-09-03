@@ -2,12 +2,13 @@
 
 namespace Nhatphamcdn\AssetsManage\Tests;
 
-use Orchestra\Testbench\TestCase as BaseTestCase;
 use Nhatphamcdn\AssetsManage\AssetsManageServiceProvider;
+use Orchestra\Testbench\TestCase as BaseTestCase;
 
 class TestCase extends BaseTestCase
 {
-    protected function getEnvironmentSetUp($app) {
+    protected function getEnvironmentSetUp($app)
+    {
         $app['config']->set('view.paths', [__DIR__.'/resources/views']);
         $app['config']->set('assets-manage.assets', [
             'local' => [
@@ -61,10 +62,10 @@ class TestCase extends BaseTestCase
                 ],
             ],
         ]);
-
     }
 
-    protected function getPackageProviders($app) {
+    protected function getPackageProviders($app)
+    {
         return [AssetsManageServiceProvider::class];
     }
 

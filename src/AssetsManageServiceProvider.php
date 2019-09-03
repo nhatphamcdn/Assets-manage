@@ -2,8 +2,8 @@
 
 namespace Nhatphamcdn\AssetsManage;
 
-use Illuminate\Support\ServiceProvider;
 use Illuminate\Support\Facades\Blade;
+use Illuminate\Support\ServiceProvider;
 
 class AssetsManageServiceProvider extends ServiceProvider
 {
@@ -32,17 +32,19 @@ class AssetsManageServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        $this->app->singleton('assets-manage', function() {
+        $this->app->singleton('assets-manage', function () {
             $assets = $this->app['config']->get('assets-manage.assets');
+
             return new AssetManage($assets);
         });
     }
 
-    private function publishConfig() {
+    private function publishConfig()
+    {
         $configPath = __DIR__.'/../config/assets.php';
-        
+
         $this->publishes([
-            $configPath => config_path('assets-manage.php')
+            $configPath => config_path('assets-manage.php'),
         ], 'config');
 
         $this->mergeConfigFrom($configPath, 'assets-manage');
